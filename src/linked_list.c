@@ -26,12 +26,21 @@ void free_list(node *p) {
 void print_list(node *p) {
   // Add your code for exercise 1
   // There is NO testcode for this
+  while(p != NULL){
+    printf("%d ", p->value);
+    p = p->next;
+  }
+  printf("\n");
 }
 
 int sum_squares(node *p) {
   // Add your code for excercise 2
   // You can find the tests in tests.cpp
-  return -1;
+  int sum;
+  while(p != NULL){
+    sum += p->value * p->value;
+  }
+  return sum;
 }
 
 typedef int (*fn_int_to_int)(int);
