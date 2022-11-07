@@ -21,7 +21,7 @@ int Contains(int x, struct tree_node *t) {
 
   // Return true if the tree t contains item x. Return false otherwise.
 
-  return NULL;
+  return -1;
 }
 
 struct tree_node *Initialize(struct tree_node *t) {
