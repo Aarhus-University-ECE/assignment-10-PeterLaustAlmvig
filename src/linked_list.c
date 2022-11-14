@@ -26,6 +26,8 @@ void free_list(node *p) {
 void print_list(node *p) {
   // Add your code for exercise 1
   // There is NO testcode for this
+
+  //Prints the head. Then call the function with the next element as the head until P is empty(NULL)
   if(p != NULL){
     printf("%d ", p->value);
     print_list(p->next);
@@ -36,9 +38,12 @@ void print_list(node *p) {
 int sum_squares(node *p) {
   // Add your code for excercise 2
   // You can find the tests in tests.cpp
+  
+  //Base case the list has been exhausted return 0.
   if(p == NULL){
     return 0;
   }
+  //Square p and add it to the next value of p squared until p is NULL.
   return square(p->value) + sum_squares(p->next);
 }
 
@@ -46,9 +51,13 @@ typedef int (*fn_int_to_int)(int);
 
 node *map(node *p, fn_int_to_int f) { 
   // Add your code for excercise 3
+
+  //Base case
   if(p == NULL){
     return NULL;
   }
+  //Create a new node to hold the summed squares to far and replace it as the current node.
+  //Call recursively on the next node.
   node *temp= malloc(sizeof(node));
   temp->value = f(p->value);
   temp->next = map(p->next, f);
